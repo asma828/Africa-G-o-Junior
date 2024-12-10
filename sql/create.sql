@@ -18,5 +18,5 @@ USE Africa;
     description varchar(2550) NOT NULL,
     type ENUM ('capitale', 'autre') NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY (pays_id) REFERENCES Pays(id)
+    FOREIGN KEY (pays_id) REFERENCES Pays(id) ON DELETE CASCADE
     );
