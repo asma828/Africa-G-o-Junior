@@ -1,14 +1,14 @@
-Interactive Educational Geography Game
-Learn and Explore Africa
-Project Overview
+# Interactive Educational Geography Game
+### Learn and Explore Africa
+## Project Overview
 This project is an educational web application aimed at helping students learn and test their geographic knowledge about the African continent. It provides an interactive platform to explore countries, their capitals, key cities, populations, and official languages.
 
-Purpose
+### Purpose
 The primary goal is to create a tool that enriches the educational experience and fosters better geographic knowledge through interactive features.
 
-Features
-User Stories
-As a Designer:
+## Features
+### User Stories
+#### As a Designer:
 Functional Design:
 
 Create a Use Case Diagram to identify the primary functionalities:
@@ -20,7 +20,7 @@ Database Modeling:
 Create an Entity-Relationship Diagram (ERD) to define:
 Relationships between countries and their major cities.
 Attributes for entities like population and official languages.
-As a Back-End Developer:
+#### As a Back-End Developer:
 Database Setup:
 
 Design a relational database to manage:
@@ -37,7 +37,7 @@ PHP Script:
 
 Implement CRUD operations for countries and cities using PHP.
 Dynamically fetch and display country data from the database.
-Technology Stack
+## Technology Stack
 Front-End: HTML, CSS, JavaScript.
 Back-End: PHP.
 Database: MySQL.
