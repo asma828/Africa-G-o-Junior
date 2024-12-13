@@ -1,7 +1,10 @@
 <?php
-// Connexion à la base de données
-$conn = new mysqli("localhost", "root", "", "Africa");
-
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "Africa"; 
+$conn = new mysqli($servername, $username, $password, $dbname);
+ if ($conn->connect_error) { 
+   die("Connection failed: " . $conn->connect_error);
+    } 
+?>
