@@ -1,18 +1,18 @@
  --insertion de pays
- INSERT INTO Pays (nom,population,langue)
+ INSERT INTO Pays (nom,population,langue,id_continent)
      VALUES
-     ('Maroc',40000000,'Arabic'),
-     ('Egypt',109000000,'Arabic'),
-     ('Nigeria',211000000,'Yoruba'),
-     ('Kenya',54000000,'Swahili'),
-     ('Algeria',45200000,'Arabic'),
-     ('Angola',35500000,'Portuguese'),
-     ('Botswana',2600000,'English'),
-     ('Cameroon',28900000,'French'),
-     ('Chad',17200000,'Franch'),
-     ('Ethiopia',120000000,'Amharic'),
-     ('Guinea',134000000,'French'),
-     ('Gambia',2600000,'English');
+     ('Maroc',40000000,'Arabic',1),
+     ('Egypt',109000000,'Arabic',1),
+     ('Nigeria',211000000,'Yoruba',1),
+     ('Kenya',54000000,'Swahili',1),
+     ('Algeria',45200000,'Arabic',1),
+     ('Angola',35500000,'Portuguese',1),
+     ('Botswana',2600000,'English',1),
+     ('Cameroon',28900000,'French',1),
+     ('Chad',17200000,'Franch',1),
+     ('Ethiopia',120000000,'Amharic',1),
+     ('Guinea',134000000,'French',1),
+     ('Gambia',2600000,'English',1);
 
  --insertion de villes
   INSERT INTO Villes (pays_id,nom,description,type)
@@ -41,3 +41,7 @@
      (11,'Kankan','Un centre régional connu pour ses activités commerciales.','autre'),
      (12,'Banjul','La capitale de la Gambie, située sur une île.','capitale'),
      (12,'Serekunda','La plus grande zone urbaine de Gambie, connue pour ses marchés.','autre');    
+
+     INSERT INTO continent (id_continent,nom)
+     VALUES
+     (1,'Afrique');
