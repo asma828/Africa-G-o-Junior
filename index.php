@@ -62,7 +62,74 @@
         <a href="crud/add_country.php" class="bg-yellow-950 text-white px-4 py-2 rounded-md mb-4 inline-block">Add New Country</a> 
         <div id="country-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> 
             
-                   
+             <?php
+             include 'src/connect.php';
+            // Affiche countries
+             $sql = "SELECT id, nom, population, langue FROM Pays"; 
+             $result = $conn->query($sql); 
+             if ($result->num_rows > 0) { 
+                while($row = $result->fetch_assoc()) {
+                 echo '    <div class="bg-white rounded-lg shadow-md p-4">
+                     <h2 class="text-xl font-bold mb-2">' . $row['nom'] . '</h2>
+                     <p><strong>Population:</strong> ' . $row['population'] . '</p>
+                     <p><strong>Official Language:</strong> ' . $row['langue'] . '</p>
+                     <div class="mt-4 flex justify-between">
+                     <form method="POST" action="crud/delete_country.php">
+                     <input type="hidden" name="id" value="' . $row['id'] . '">
+                     <button type="submit" class="bg-orange-600 text-white px-4 py-2 rounded-md">Delete</button>
+                     </form>
+                     <a href="crud/update_pays.php?id='.$row['id'].'">
+                    <button class="bg-amber-200 text-white px-4 py-2 rounded-md">Update</button>
+                           </a>
+                     </div>
+                     </div>'; 
+                     } 
+                     } 
+                     else { 
+                        echo "<p class='text-center'>No countries found.</p>"; 
+                        } 
+            ?> 
+                        </div> 
+                    </section> 
+                    <!--villes -->
+                    <section class="container mx-auto p-4 mt-8"> 
+                        <h2 class="text-xl font-bold mb-2">Cities</h2> 
+                        <a href="crud/add_city.php" class="bg-yellow-950 text-white px-4 py-2 rounded-md mb-4 inline-block">Add New City</a>
+                        <div id="city-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                             <!-- affiche villes-->
+                             <?php 
+                              include 'src/connect.php';
+                             $sql = "SELECT Villes.id AS ville_id, Villes.nom as city_name, Villes.description, Villes.type, Pays.nom as country_name FROM Villes JOIN Pays ON Villes.pays_id = Pays.id"; 
+                             $result = $conn->query($sql); 
+                             if ($result->num_rows > 0) {
+                                 while($row = $result->fetch_assoc()) 
+                                 {
+                        echo '<div class="bg-white rounded-lg shadow-md "> 
+                            <div class="p-4"> 
+                            <h2 class="text-xl font-bold mb-2">' . $row['city_name'] . '</h2> 
+                            <p><strong>Country:</strong> ' . $row['country_name'] . '</p> 
+                            <p><strong>Type:</strong> ' . $row['type'] . '</p> 
+                            <p><strong>Description:</strong> ' . $row['description'] . '</p>
+                            <div class="mt-4 flex justify-between"> 
+                            <form method="POST" action="crud/delete_city.php"> 
+                            <input type="hidden" name="id" value="' . $row['ville_id'] . '"> 
+                            <button type="submit" class="bg-orange-600 text-white px-4 py-2 rounded-md">Delete</button> 
+                            </form> 
+                            <a href="crud/update_ville.php?id='.$row['ville_id'].'">
+                                <button class="bg-amber-200 text-white px-4 py-2 rounded-md">Update</button>
+                           </a>
+
+                            </div>
+                            </div>
+                            </div>';
+                        } 
+                        } else { 
+                            echo "<p class='text-center'>No cities found.</p>"; 
+                            } 
+                            $conn->close(); 
+                            ?> 
+                        </div> 
+                    </section>          
 
     <!-- Footer -->
     <footer class="bg-orange-800 text-white text-center p-4 mt-8">
