@@ -118,7 +118,6 @@
                             <a href="crud/update_ville.php?id='.$row['ville_id'].'">
                                 <button class="bg-amber-200 text-white px-4 py-2 rounded-md">Update</button>
                            </a>
-
                             </div>
                             </div>
                             </div>';
